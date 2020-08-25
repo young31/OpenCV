@@ -26,6 +26,8 @@ if __name__=='__main__':
     idx = 0
     while cap.isOpened():
         ret, frame = cap.read()
+        if frame is None:
+            break
         frame = cv.resize(frame, size)
 
         cv.imshow('cam', frame)
